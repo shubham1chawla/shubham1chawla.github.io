@@ -1,4 +1,9 @@
 .main_card {
+	-webkit-transition: 0.75s;
+	-moz-transition: 0.75s;
+	-ms-transition: 0.75s;
+	-o-transition: 0.75s;
+	transition: 0.75s;
 	border-radius: 10px;
 	padding: 2%;
 	opacity: 0.9;
@@ -105,4 +110,43 @@ a {
   color: white;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+
+
+
+
+.fade_normal {
+	-webkit-transition: 0.75s;
+  -moz-transition: 0.75s;
+  -ms-transition: 0.75s;
+  -o-transition: 0.75s;
+  transition: 0.75s;
+	opacity: 1;
+	visibility: visible;
+}
+
+.fade_fade {
+	-webkit-transition: 0.75s;
+  -moz-transition: 0.75s;
+  -ms-transition: 0.75s;
+  -o-transition: 0.75s;
+  transition: 0.75s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+.add-margin-neg30 {
+	margin-bottom: -30px;
+}
+
+.add-margin-pos30 {
+	margin-bottom: 30px;
+}
+
+.modal-backdrop {
+	opacity: 0.4;
 }

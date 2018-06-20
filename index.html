@@ -17,6 +17,7 @@
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
 
 	<title>Shubham Chawla</title>
 </head>
@@ -24,17 +25,17 @@
 
 <!-- Starts here -->
 <div class="wrapper">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 card main_card" id="resize_element" style="overflow-y: scroll;">
 
 			<!-- MAIN DRAW AREA -->
-			<div class="container-fluid" id="inject" style="display: none; overflow-y: scroll;"></div>
+			<div class="container-fluid" id="inject" style="display: none; overflow-y: scroll; padding-top: 20px;"></div>
 			<!-- HOME DIV -->
-			<div class="container-fluid" id="home_div">
+			<div class="container-fluid" id="home_div" style="overflow-y: scroll; padding-top: 20px;">
 				<div class="container text-center">
 					<img src="img/profile.jpg" alt="profile" height="auto" width="200px" class="profile_img">
 					<h1 class="poiret">Shubham Chawla</h1>
-					<p class="raleway_font">I'm <span id="highfyLines">a Full Stack Developer</span></p>
+					<p class="raleway_font">I'm <span id="highfyLines" class="fade_normal">a Full Stack Developer</span></p>
 					<hr>
 					<!-- Social Handles -->
 					<div id="facebook" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.facebook.com/profile.php?id=100001155159356"><i class="fab fa-facebook-square"></i></a></div>
@@ -47,8 +48,7 @@
 			</div>
 			
 			<!-- NAV -->
-			<a href="#" style="text-align: center;" id="toggle"><i class="fas fa-bars"></i></a>
-			<div id="toggle_div">
+			<div id="toggle_div" class="fade_fade">
 				<nav class="navbar navbar-expand-sm justify-content-center">
 					<ul class="navbar-nav">
 						<li class="nav-item">
@@ -69,6 +69,31 @@
 					</ul>
 				</nav>
 			</div>
+			<a class="fade_normal" href="#" style="text-align: center;" id="toggle"><i class="fas fa-bars"></i></a>
+		</div>
+	</div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content" style="padding: 5%;">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+			<h4 class="modal-title raleway_font" id="modal_heading">Modal Heading</h4>
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+
+		<!-- Modal body -->
+		<div class="modal-body raleway_font" id="modal_body">
+			Modal body..
+		</div>
+
+		<!-- Modal footer -->
+		<div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		</div>
 
 		</div>
 	</div>
