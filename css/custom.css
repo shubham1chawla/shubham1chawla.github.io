@@ -1,3 +1,66 @@
-.red {
-	color: #F00;
+.main_card {
+	border-radius: 10px;
+	padding: 2%;
+	opacity: 0.9;
+	padding-bottom: 2.5%;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: url('../img/bg.jpg') center center no-repeat;
+	background-size: auto 100%;
+	overflow: hidden; 
+}
+
+a {
+	color: inherit;
+}
+
+.profile_img {
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.line {
+	background-color: #7f8c8d;
+	width: 2px;
+	height: 80%;
+	margin-top: 7.5%;
+	margin-bottom: 10%;
+}
+
+.stretch {
+	width: 100%;
+	height: 100%;
+}
+
+.raleway_font {
+	font-family: 'Raleway', sans-serif;
+}
+
+.poiret {
+	font-family: 'Poiret One', cursive;
+}
+
+.dontshow {
+	visibility: hidden;
+}
+
+.scrollable_div {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+#toggle_div {
+    display: none;
 }

@@ -8,6 +8,13 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet">
+
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
@@ -15,8 +22,58 @@
 </head>
 <body>
 
-	<div class="jumbotron">
-		Hello
+<!-- Starts here -->
+<div class="wrapper">
+	<div class="container">
+		<div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 card main_card" id="resize_element" style="overflow-y: scroll;">
+
+			<!-- MAIN DRAW AREA -->
+			<div class="container" id="inject" style="display: none; overflow-y: scroll;"></div>
+			<!-- HOME DIV -->
+			<div class="container" id="home_div">
+				<div class="container text-center">
+					<img src="img/profile.jpg" alt="profile" height="auto" width="200px" class="profile_img">
+					<h1 class="poiret">Shubham Chawla</h1>
+					<p class="raleway_font">I'm <span id="highfyLines">a Full Stack Developer</span></p>
+					<hr>
+					<!-- Social Handles -->
+					<div id="facebook" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.facebook.com/profile.php?id=100001155159356"><i class="fab fa-facebook-square"></i></a></div>
+					<div id="linkedin" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.linkedin.com/in/shubham1chawla"><i class="fab fa-linkedin"></i></a></div>
+					<div id="mail" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="mailto: shubham_chawla@live.com"><i class="fas fa-envelope-square"></i></a></div>
+					<div id="github" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.github.com/shubham1chawla"><i class="fab fa-github-square"></i></a></div>
+					<div id="resume" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://drive.google.com/open?id=13l1vvCrakxNvkRI_AVB_QtP9QgBzvp5A"><i class="fas fa-pen-square"></i></a></div>
+					<span id="info" style="display: none"></span>
+				</div>
+			</div>
+			
+			<!-- NAV -->
+			<a href="#" style="text-align: center;" id="toggle"><i class="fas fa-bars"></i></a>
+			<div id="toggle_div">
+				<nav class="navbar navbar-expand-sm justify-content-center">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="home"><i class="fas fa-home"></i> Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="about"><i class="fas fa-user-circle"></i> About Me</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="projects"><i class="fas fa-project-diagram"></i> Projects</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="experiences"><i class="fas fa-users"></i> Experiences</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="skills"><i class="fas fa-code"></i> Skills & Proficiency</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+		</div>
 	</div>
+</div>
+
+<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
