@@ -11,9 +11,14 @@
 }
 
 body {
+	-webkit-transition: 0.75s;
+	-moz-transition: 0.75s;
+	-ms-transition: 0.75s;
+	-o-transition: 0.75s;
+	transition: 0.75s;
 	width: 100vw;
 	height: 100vh;
-	background: url('../img/bg.jpg') center center no-repeat;
+	/*background: url('../img/bg.jpg') center center no-repeat;*/
 	background-size: auto 100%;
 	overflow: hidden; 
 }
@@ -74,6 +79,10 @@ a {
 	padding: 5px;
 }
 
+
+
+
+
 .con {
     position: relative;
 }
@@ -84,6 +93,8 @@ a {
   width: 100%;
   transition: .5s ease;
   backface-visibility: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 3px #bdc3c7;
 }
 
 .middle {
@@ -118,22 +129,22 @@ a {
 
 .fade_normal {
 	-webkit-transition: 0.75s;
-  -moz-transition: 0.75s;
-  -ms-transition: 0.75s;
-  -o-transition: 0.75s;
-  transition: 0.75s;
+	-moz-transition: 0.75s;
+	-ms-transition: 0.75s;
+	-o-transition: 0.75s;
+	transition: 0.75s;
 	opacity: 1;
 	visibility: visible;
 }
 
 .fade_fade {
 	-webkit-transition: 0.75s;
-  -moz-transition: 0.75s;
-  -ms-transition: 0.75s;
-  -o-transition: 0.75s;
-  transition: 0.75s;
-  opacity: 0;
-  visibility: hidden;
+	-moz-transition: 0.75s;
+	-ms-transition: 0.75s;
+	-o-transition: 0.75s;
+	transition: 0.75s;
+	opacity: 0;
+	visibility: hidden;
 }
 
 
@@ -149,4 +160,27 @@ a {
 
 .modal-backdrop {
 	opacity: 0.4;
+}
+
+
+.particles {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.wrapper {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100vw;
+	height: auto;
+	z-index: 1;
+}
+
+.modal {
+	z-index: 99999;
 }
