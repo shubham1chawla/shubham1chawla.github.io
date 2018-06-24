@@ -1,9 +1,9 @@
 .main_card {
-	-webkit-transition: 0.75s;
-	-moz-transition: 0.75s;
-	-ms-transition: 0.75s;
-	-o-transition: 0.75s;
-	transition: 0.75s;
+	-webkit-transition: 0.75s ease-out;
+	-moz-transition: 0.75s ease-out;
+	-ms-transition: 0.75s ease-out;
+	-o-transition: 0.75s ease-out;
+	transition: 0.75s ease-out;
 	border-radius: 10px;
 	padding: 2%;
 	opacity: 0.9;
@@ -11,11 +11,11 @@
 }
 
 body {
-	-webkit-transition: 0.75s;
-	-moz-transition: 0.75s;
-	-ms-transition: 0.75s;
-	-o-transition: 0.75s;
-	transition: 0.75s;
+	-webkit-transition: 0.75s ease-out;
+	-moz-transition: 0.75s ease-out;
+	-ms-transition: 0.75s ease-out;
+	-o-transition: 0.75s ease-out;
+	transition: 0.75s ease-out;
 	width: 100vw;
 	height: 100vh;
 	/*background: url('../img/bg.jpg') center center no-repeat;*/
@@ -128,21 +128,21 @@ a {
 
 
 .fade_normal {
-	-webkit-transition: 0.75s;
-	-moz-transition: 0.75s;
-	-ms-transition: 0.75s;
-	-o-transition: 0.75s;
-	transition: 0.75s;
+	-webkit-transition: 0.75s ease-out;
+	-moz-transition: 0.75s ease-out;
+	-ms-transition: 0.75s ease-out;
+	-o-transition: 0.75s ease-out;
+	transition: 0.75s ease-out;
 	opacity: 1;
 	visibility: visible;
 }
 
 .fade_fade {
-	-webkit-transition: 0.75s;
-	-moz-transition: 0.75s;
-	-ms-transition: 0.75s;
-	-o-transition: 0.75s;
-	transition: 0.75s;
+	-webkit-transition: 0.75s ease-out;
+	-moz-transition: 0.75s ease-out;
+	-ms-transition: 0.75s ease-out;
+	-o-transition: 0.75s ease-out;
+	transition: 0.75s ease-out;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -183,4 +183,17 @@ a {
 
 .modal {
 	z-index: 99999;
+}
+
+
+.inside-modal-skill {
+	position: relative;
+	padding: 15px;
+	margin: 5px;
+	background-color: #ecf0f1;
+	border-radius: 40px;
+}
+
+.project-select {
+	margin-top: -50px;
 }

@@ -43,6 +43,8 @@ function resize(){
 	$("#resize_element").css("height", div_height+"px").css("margin-top", margin_top_bottom+"px").css("margin-bottom", margin_top_bottom+"px");
 	$("#home_div").css("height", (div_height-30)+"px");
 	$("#inject").css("height", (div_height-30)+"px");
+
+	check_screen_type();
 }
 
 /*
@@ -51,6 +53,7 @@ function resize(){
 
 var currently_visible_page = "home";
 function managePage(){
+	current_project_skill_selected = -1;	// This resets the default project layout
 	toggle_slider();
 	switch(currently_visible_page){
 		case "home":
@@ -157,7 +160,7 @@ function toggle_slider(){
 
 $("#resume").hover(function(){
 	if(!slider_toggled){
-		$("#info").html("PDF Resume");
+		$("#info").html("CV PDF link");
 		$("#info").css("display", "block");
 	}
 }, function(){
@@ -209,26 +212,84 @@ $("#github").hover(function(){
 /*
 	MODAL ACTION & PROJECT PAGE BUILDER
 */
-
+var current_project_skill_selected = -1;
 function build_project_page(){
-	var page_html = "<h3 class='raleway_font'><i class='fas fa-project-diagram'></i> Projects</h3><hr><div class='container-fluid' style='overflow-y: scroll;'>";
-	page_html += "<div class='row'>";
-	var projects = tab_data[1].data;
-	for(var i=0; i<projects.length; i++){
-		page_html += "<div class='col-md-3'>";
-		page_html += "<button id='"+i+"' class='btn btn-default project' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
-		page_html += "<div class='con'>";
-		page_html += "<img src='img/"+projects[i].img+"' alt='"+projects[i].title+"' width='100%' height='100%' class='image'>";
-		page_html += "<span class='middle raleway_font'><strong>"+projects[i].title+"<strong></span>"
-		page_html += "</div>";
-		page_html += "</button>";
-		page_html += "</div>";
+	var page_html = "<h3 class='raleway_font'><i class='fas fa-project-diagram'></i> Projects</h3>";
+
+	// Adding skill-wise filering system
+	var skills_obj = tab_data[3].data;
+	if(skills_obj !== undefined){
+		page_html += "<div class='row project-select'><div class='col-md-4 offset-md-8'><select class='form-control' name='project-selected-text'>";
+		page_html += "<option class='project-select-option' value='-1'>All</option>";
+		for(var i=0; i<skills_obj.length; i++){
+			page_html += "<option class='project-select-option' value='"+skills_obj[i].id+"'>"+skills_obj[i].title+"</option>";
+		}
+		page_html += "</select></div></div><hr>";
 	}
+
+	page_html += "<div id='inner-project-div' class='container-fluid' style='overflow-y: scroll;'>";
 	page_html += "</div>";
+
 	$("#inject").html(page_html);
+
+	// Injects the data of inner project div
+	build_inner_project(current_project_skill_selected);
+
+	$("select[name='project-selected-text']").change(function(){
+		current_project_skill_selected = $(this).val();
+		build_inner_project(current_project_skill_selected);
+	});
+}
+
+// For filter system
+$("select[name='project-selected-text']").change(function(){
+	current_project_skill_selected = $(this).val();
+	build_inner_project(current_project_skill_selected);
+});
+function build_inner_project(skill){
+	var html = "<div class='row'>";
+
+	var projects_obj = tab_data[1].data;
+	var skills_obj = tab_data[3].data;
+
+	for(var i=0; i<projects_obj.length; i++){
+		if(skill == -1){
+			// Select desired skill only
+			html += "<div class='col-md-3'>";
+			html += "<button id='"+i+"' class='btn btn-default project' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
+			html += "<div class='con'>";
+			html += "<img src='img/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
+			html += "<span class='middle raleway_font'><strong>"+projects_obj[i].title+"<strong></span>"
+			html += "</div>";
+			html += "</button>";
+			html += "</div>";
+		}
+		else{
+			var skill_check = false;
+			for(var j=0; j<projects_obj[i].tech.length; j++){
+				if(projects_obj[i].tech[j] == skill){
+					skill_check = true;
+					break;
+				}
+			}
+			if(skill_check === true){
+				html += "<div class='col-md-3'>";
+				html += "<button id='"+i+"' class='btn btn-default project' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
+				html += "<div class='con'>";
+				html += "<img src='img/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
+				html += "<span class='middle raleway_font'><strong>"+projects_obj[i].title+"<strong></span>"
+				html += "</div>";
+				html += "</button>";
+				html += "</div>";
+			}
+		}
+	}
+	html += "</div>";
+	$("#inner-project-div").html(html);
 	$(".project").click(make_project_modal);
 }
 
+// Creates modal
 $(".project").click(make_project_modal);
 function make_project_modal(){
 	var id = $(this).attr("id");
@@ -237,10 +298,21 @@ function make_project_modal(){
 	var body_html = "";
 	body_html += "<img src='img/"+project_details.img+"' width='100%' height='auto'><br>";
 	body_html += "<hr><strong>DESCRIPTION</strong><hr><p style='text-align: justify;'>"+project_details.text+"</p>";
-	body_html += "<hr><strong>TECHNOLOGY USED</strong><hr><pre>"+project_details.tech+"</pre>";
+	body_html += "<hr><strong>SKILL(S) USED</strong><hr><div class='row'>"+make_skills_section_in_modal(project_details.tech)+"</div>";
 	body_html += "<hr><strong>TIMELINE</strong><hr>"+project_details.timeline;
 	body_html += "<hr><strong>LINK</strong><hr><a href='"+project_details.link+"'><pre>"+project_details.link+"</pre></a>";
 	$("#modal_body").html(body_html);
+}
+
+function make_skills_section_in_modal(id = {}){
+	var html = "";
+	if(id !== undefined || id.length !== 0){
+		var skills_obj = tab_data[3].data;
+		for(var i=0; i<id.length; i++){
+			html += "<div class='col-xs-2 inside-modal-skill'><strong>"+skills_obj[id[i]].title+"</strong></div>";
+		}
+	}
+	return html;
 }
 
 /*
@@ -251,6 +323,12 @@ function build_skill_page(){
 	var page_html = "<div class='container-fluid'><h3 class='raleway_font'><i class='fas fa-code'></i> Skills & Proficiency</h3><hr>";
 	page_html += "<div class='row text-center' style='margin-bottom: 30px;'>";
 	var skills = tab_data[3].data;
+
+	// Sort according to the skill level
+	skills.sort(function(a, b){
+		return b.level - a.level;
+	});
+
 	for(var i=0; i<skills.length; i++){
 		page_html += "<div class='col-md-4 col-xs-6' title='Skill Level: "+skills[i].level+"/5'>";
 		page_html += "<br>"+skills[i].icon+"<br><span><strong>"+skills[i].title+"</strong></span><br>";
@@ -348,4 +426,24 @@ function make_experience_modal(){
 	body_html += "<br><strong>Timeline: </strong>"+experience_details.timeline;
 	body_html += "<hr><strong>Description</strong><p style='text-align: justify;'>"+experience_details.text+"</p>";
 	$("#modal_body").html(body_html);
+}
+
+/*
+	SCREEN SIZE DETECTOR
+*/
+
+function check_screen_type(){
+	var viewport_height = $(window).height();
+	var viewport_width = $(window).width();
+
+	var ratio_phones = viewport_height/viewport_width;
+
+	if(ratio_phones > 1.4){
+		// Smartphone
+		$('.project-select').css("margin-top", "0px");
+	}
+	else{
+		// for laptops
+		$('.project-select').css("margin-top", "-50px");
+	}
 }
