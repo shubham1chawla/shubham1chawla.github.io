@@ -23,6 +23,14 @@ window.onload = function(){
 	setInterval(changeTagLine, 2500);
 };
 
+
+
+
+
+
+
+
+
 /*
 	RESIZE MECH
 */
@@ -46,6 +54,14 @@ function resize(){
 
 	check_screen_type();
 }
+
+
+
+
+
+
+
+
 
 /*
 	MANAGE PAGES
@@ -114,6 +130,14 @@ $("#skills").click(function(){
 	managePage();
 });
 
+
+
+
+
+
+
+
+
 /*
 	CHANGE TAGLINE MECHANISM
 */
@@ -127,6 +151,14 @@ function changeTagLine(){
 	highfyLines.innerHTML = tab_data[4].data[tagline_num].name;
 }
 
+
+
+
+
+
+
+
+
 /*
 	THIS SECTION IS FOR EXPANDING THE NAV BAR
 */
@@ -138,13 +170,13 @@ $("a#toggle").click(function(){
 	$("a#toggle").addClass("fade_fade");
 	$("#toggle_div").removeClass("fade_fade");
 	$("#toggle_div").addClass("fade_normal");
-	$("a#toggle").addClass("add-margin-neg30");
+	$("a#toggle").addClass("add-margin-neg50");
 	slider_toggled = true;
 	return true;
 });
 
 function toggle_slider(){
-	$("a#toggle").removeClass("add-margin-neg30");
+	$("a#toggle").removeClass("add-margin-neg50");
 	$("#toggle_div").removeClass("fade_normal");
 	$("#toggle_div").addClass("fade_fade");
 	$("a#toggle").removeClass("fade_fade");
@@ -153,6 +185,14 @@ function toggle_slider(){
 	slider_toggled = false;
 	return true;
 }
+
+
+
+
+
+
+
+
 
 /*
 	THIS SECTION IS FOR SOCIAL LINK HOVERING
@@ -209,6 +249,13 @@ $("#github").hover(function(){
 });
 
 
+
+
+
+
+
+
+
 /*
 	MODAL ACTION & PROJECT PAGE BUILDER
 */
@@ -258,7 +305,7 @@ function build_inner_project(skill){
 			html += "<div class='col-md-3'>";
 			html += "<button id='"+i+"' class='btn btn-default project' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
 			html += "<div class='con'>";
-			html += "<img src='img/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
+			html += "<img src='img/projects/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
 			html += "<span class='middle raleway_font'><strong>"+projects_obj[i].title+"<strong></span>"
 			html += "</div>";
 			html += "</button>";
@@ -276,7 +323,7 @@ function build_inner_project(skill){
 				html += "<div class='col-md-3'>";
 				html += "<button id='"+i+"' class='btn btn-default project' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
 				html += "<div class='con'>";
-				html += "<img src='img/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
+				html += "<img src='img/projects/"+projects_obj[i].img+"' alt='"+projects_obj[i].title+"' width='100%' height='100%' class='image'>";
 				html += "<span class='middle raleway_font'><strong>"+projects_obj[i].title+"<strong></span>"
 				html += "</div>";
 				html += "</button>";
@@ -296,10 +343,10 @@ function make_project_modal(){
 	var project_details = tab_data[1].data[id];
 	$("#modal_heading").html(project_details.title);
 	var body_html = "";
-	body_html += "<img src='img/"+project_details.img+"' width='100%' height='auto'><br>";
+	body_html += "<div style='width:100%;text-align:center;'><img src='img/projects/"+project_details.img+"' width='75%' height='auto'></div><br>";
 	body_html += "<hr><strong>DESCRIPTION</strong><hr><p style='text-align: justify;'>"+project_details.text+"</p>";
 	body_html += "<hr><strong>SKILL(S) USED</strong><hr><div class='row'>"+make_skills_section_in_modal(project_details.tech)+"</div>";
-	body_html += "<hr><strong>TIMELINE</strong><hr>"+project_details.timeline;
+	body_html += "<hr><strong>TIMELINE</strong><hr>"+print_timeline(project_details.timeline);
 	body_html += "<hr><strong>LINK</strong><hr><a href='"+project_details.link+"'><pre>"+project_details.link+"</pre></a>";
 	$("#modal_body").html(body_html);
 }
@@ -314,6 +361,14 @@ function make_skills_section_in_modal(id = {}){
 	}
 	return html;
 }
+
+
+
+
+
+
+
+
 
 /*
 	SKILL PAGE BUILDER
@@ -344,7 +399,20 @@ function build_skill_page(){
 	}
 	page_html += "</div>";
 	$("#inject").html(page_html);
+
+	// Sort array back to id
+	skills.sort(function(a, b){
+		return a.id - b.id;
+	});
 }
+
+
+
+
+
+
+
+
 
 /*
 	ABOUT PAGE BUILDER
@@ -392,6 +460,14 @@ function build_about_page(){
 	$("#inject").html(page_html);
 }
 
+
+
+
+
+
+
+
+
 /*
 	EXPERIENCE PAGE BUILDER
 */
@@ -404,7 +480,7 @@ function build_experience_page(){
 		page_html += "<div class='col-md-3'>";
 		page_html += "<button id='"+i+"' class='btn btn-default experience' style='background-color: rgba(0,0,0,0);' data-toggle='modal' data-target='#myModal' alt='"+i+"'>";
 		page_html += "<div class='con'>";
-		page_html += "<img src='img/"+experience[i].img+"' alt='"+experience[i].title+"' width='100%' height='100%' class='image'>";
+		page_html += "<img src='img/experiences/"+experience[i].img+"' alt='"+experience[i].title+"' width='100%' height='100%' class='image'>";
 		page_html += "<span class='middle raleway_font'><strong>"+experience[i].title+"<strong></span>"
 		page_html += "</div>";
 		page_html += "</button>";
@@ -421,12 +497,20 @@ function make_experience_modal(){
 	var experience_details = tab_data[2].data[id];
 	$("#modal_heading").html(experience_details.title);
 	var body_html = "";
-	body_html += "<div style='width:100%;text-align:center;'><img src='img/"+experience_details.img+"' width='50%' height='auto'></div><br>";
+	body_html += "<div style='width:100%;text-align:center;'><img src='img/experiences/"+experience_details.img+"' width='50%' height='auto'></div><br>";
 	body_html += "<hr><strong>Position: </strong>"+experience_details.pos;
-	body_html += "<br><strong>Timeline: </strong>"+experience_details.timeline;
+	body_html += "<br><strong>Timeline: </strong>"+print_timeline(experience_details.timeline);
 	body_html += "<hr><strong>Description</strong><p style='text-align: justify;'>"+experience_details.text+"</p>";
 	$("#modal_body").html(body_html);
 }
+
+
+
+
+
+
+
+
 
 /*
 	SCREEN SIZE DETECTOR
@@ -446,4 +530,82 @@ function check_screen_type(){
 		// for laptops
 		$('.project-select').css("margin-top", "-50px");
 	}
+}
+
+
+
+
+
+
+
+
+
+/*
+	TIMELINE PRINT
+*/
+
+function print_timeline(timeline_obj){
+	var text = "";
+	if(timeline_obj[0] != undefined){
+		if(timeline_obj[0].date != -1){
+			text += timeline_obj[0].date+" ";
+		}
+		text += num_to_text_month(timeline_obj[0].month)+", "+timeline_obj[0].year+" - ";
+		if(timeline_obj[1] != undefined){
+			if(timeline_obj[1].date != -1){
+				text += timeline_obj[1].date+" ";
+			}
+			text += num_to_text_month(timeline_obj[1].month)+", "+timeline_obj[1].year;
+		}
+		else{
+			text += "Present";
+		}
+	}
+	return text;
+}
+
+function num_to_text_month(num){
+	var text = "";
+	switch(num){
+		case 1:
+			text += "January";
+		break;
+		case 2:
+			text += "February";
+		break;
+		case 3:
+			text += "March";
+		break;
+		case 4:
+			text += "April";
+		break;
+		case 5:
+			text += "May";
+		break;
+		case 6:
+			text += "June";
+		break;
+		case 7:
+			text += "July";
+		break;
+		case 8:
+			text += "August";
+		break;
+		case 9:
+			text += "September";
+		break;
+		case 10:
+			text += "October";
+		break;
+		case 11:
+			text += "November";
+		break;
+		case 12:
+			text += "December";
+		break;
+		default:
+			text += "Error occured, num_to_text_month(num) method";
+		break;
+	}
+	return text;
 }

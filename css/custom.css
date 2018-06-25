@@ -77,9 +77,15 @@ a {
 
 .project {
 	padding: 5px;
+	border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-
+.experience {
+	padding: 5px;
+	border-radius: 50%;
+    margin-bottom: 20px;
+}
 
 
 
@@ -94,7 +100,7 @@ a {
   transition: .5s ease;
   backface-visibility: hidden;
   border-radius: 50%;
-  box-shadow: 0px 0px 3px 3px #bdc3c7;
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.25);
 }
 
 .middle {
@@ -109,7 +115,7 @@ a {
 }
 
 .con:hover .image {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .con:hover .middle {
@@ -150,12 +156,12 @@ a {
 
 
 
-.add-margin-neg30 {
-	margin-bottom: -30px;
+.add-margin-neg50 {
+	margin-bottom: -50px;
 }
 
-.add-margin-pos30 {
-	margin-bottom: 30px;
+.add-margin-pos50 {
+	margin-bottom: 50px;
 }
 
 .modal-backdrop {
