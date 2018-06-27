@@ -75,6 +75,18 @@ a {
     display: none;
 }
 
+#toggle:hover {
+	text-decoration: none;
+}
+
+.toggle_hover {
+	padding: 5px 20px;
+	border-style: solid;
+	border-color: inherit;
+	border-width: 1px;
+	border-radius: 50px;
+}
+
 .project {
 	padding: 5px;
 	border-radius: 50%;
@@ -202,4 +214,14 @@ a {
 
 .project-select {
 	margin-top: -50px;
+}
+
+.footer {
+	position: absolute;
+	z-index: 1;
+	top: 92.5%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	opacity: 0.9;	
 }

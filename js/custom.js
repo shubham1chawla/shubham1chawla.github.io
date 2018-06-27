@@ -609,3 +609,23 @@ function num_to_text_month(num){
 	}
 	return text;
 }
+
+
+
+
+
+
+
+
+
+/*
+	FOR TOGGLE HOVER
+*/
+
+$("#toggle").hover(function(){
+	if(currently_visible_page === "home"){
+		$('#toggle').html("<span class='toggle_hover'>Explore</span>");
+	}
+}, function(){
+	$('#toggle').html("<i class='fas fa-bars'></i>");
+});
