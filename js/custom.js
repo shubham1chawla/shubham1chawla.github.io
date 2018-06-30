@@ -262,6 +262,16 @@ $("#github").hover(function(){
 	$("#info").html("");
 });
 
+$("#toggle").hover(function(){
+	if(!slider_toggled){
+		$("#info").html("Explore More!");
+		$("#info").css("display", "block");
+	}
+}, function(){
+	$("#info").css("display", "none");
+	$("#info").html("");
+});
+
 
 
 
@@ -652,10 +662,10 @@ function num_to_text_month(num){
 	FOR TOGGLE HOVER
 */
 
-$("#toggle").hover(function(){
+/*$("#toggle").hover(function(){
 	if(currently_visible_page === "home"){
 		$('#toggle').html("<span class='toggle_hover'>Explore</span>");
 	}
 }, function(){
 	$('#toggle').html("<i class='fas fa-bars'></i>");
-});
+});*/
