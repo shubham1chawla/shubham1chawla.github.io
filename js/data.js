@@ -53,6 +53,27 @@ var tab_data = [
 	]},
 	{name: "projects", data: [
 		{
+			title: "Notes App",
+			img: "notesapp.png",
+			text: "Notes app is a simple and light-weight notes app that can locally save all your notes. You can edit your notes and delete them. It uses react.js to provide auto refresh feactures without using vanila javascript. It uses bootstrap & fontawesome to give its materialistic look.",
+			tech: [0,1,3,4,11,12,15],
+			timeline: [
+				{
+					name: "Start-time",
+					date: -1,
+					month: 6,
+					year: 2018
+				},
+				{
+					name: "End-time",
+					date: -1,
+					month: 6,
+					year: 2018
+				}
+			],
+			link: "https://github.com/shubham1chawla/ReactJS-Notes"
+		},
+		{
 			title: "Blog Landing Page",
 			img: "bloglandingpage1.png",
 			text: "This project was designed solely to apply for a project by Mr. Hitesh Choudhary. This beautiful template uses JQuery and JS methods to inject data into HTML and to build a blog type landing page. This design was first implemented on Photoshop and then built using bootstrap, HTML, JS and CSS.",
@@ -478,6 +499,12 @@ var tab_data = [
 			title: "Adobe Indesign",
 			icon: "<img src='img/skills/in.jpg' width='80px' height='80px; opacity: 0.9;'>",
 			level: 4
+		},
+		{
+			id: 15,
+			title: "React JS",
+			icon: "<i class='fab fa-react fa-5x'></i>",
+			level: 3
 		}
 	]},
 	{name: "taglines", data: [

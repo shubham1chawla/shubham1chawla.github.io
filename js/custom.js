@@ -265,6 +265,17 @@ function build_project_page(){
 
 	// Adding skill-wise filering system
 	var skills_obj = tab_data[3].data;
+
+	console.log(skills_obj);
+
+	// Sort according to the skill title
+	skills_obj.sort(function(a, b){
+		if(a.title < b.title) return -1;
+	    if(a.title > b.title) return 1;
+	    return 0;
+	});
+	console.log(skills_obj);
+
 	if(skills_obj !== undefined){
 		page_html += "<div class='row project-select'><div class='col-md-4 offset-md-8'><select class='form-control' name='project-selected-text'>";
 		page_html += "<option class='project-select-option' value='-1'>All</option>";
@@ -278,6 +289,11 @@ function build_project_page(){
 	page_html += "</div>";
 
 	$("#inject").html(page_html);
+
+	// Sort according to the skill id
+	skills_obj.sort(function(a, b){
+		return a.id - b.id;
+	});
 
 	// Injects the data of inner project div
 	build_inner_project(current_project_skill_selected);
