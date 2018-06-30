@@ -20,7 +20,7 @@ window.onload = function(){
 	setInterval(resize, 1000/60);
 
 	//To change content
-	setInterval(changeTagLine, 2500);
+	// setInterval(changeTagLine, 2500);
 };
 
 
@@ -142,7 +142,7 @@ $("#skills").click(function(){
 	CHANGE TAGLINE MECHANISM
 */
 
-var tagline_num = 0;
+/*var tagline_num = 0;
 function changeTagLine(){
 	tagline_num++;
 	if(tagline_num >= tab_data[4].data.length){
@@ -150,8 +150,22 @@ function changeTagLine(){
 	}
 	highfyLines.innerHTML = tab_data[4].data[tagline_num].name;
 }
+*/
+function getTaglines(){
+  	var arr = [];
+  	for(var i=0; i<tab_data[4].data.length; i++){
+  		arr.push(tab_data[4].data[i].name);
+  	}
+  	return arr;
+}
 
-
+var typed = new Typed(".tagline", {
+	strings: getTaglines(),
+	typeSpeed: 40,
+	backSpeed: 30,
+	loop: true,
+	backDelay: 2500
+});
 
 
 
