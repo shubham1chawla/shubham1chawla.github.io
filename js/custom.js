@@ -71,6 +71,7 @@ var currently_visible_page = "home";
 function managePage(){
 	current_project_skill_selected = -1;	// This resets the default project layout
 	toggle_slider();
+	check_screen_type()						// Recalculates the device type
 	switch(currently_visible_page){
 		case "home":
 			$("#inject").html("");
@@ -179,23 +180,27 @@ var typed = new Typed(".tagline", {
 
 var slider_toggled = false;
 $("a#toggle").click(function(){
-	$("#toggle_div").css("display", "block");
+	$("#toggle_div").css("visibility", "visible");
 	$("a#toggle").removeClass("fade_normal");
 	$("a#toggle").addClass("fade_fade");
 	$("#toggle_div").removeClass("fade_fade");
 	$("#toggle_div").addClass("fade_normal");
-	$("a#toggle").addClass("add-margin-neg50");
+	if(ratio_phones < 1.4){
+		$("#toggle_div").css("margin-top", "35px");
+	}
 	slider_toggled = true;
 	return true;
 });
 
 function toggle_slider(){
-	$("a#toggle").removeClass("add-margin-neg50");
+	if(ratio_phones < 1.4){
+		$("#toggle_div").css("margin-top", "0px");
+	}
 	$("#toggle_div").removeClass("fade_normal");
 	$("#toggle_div").addClass("fade_fade");
 	$("a#toggle").removeClass("fade_fade");
 	$("a#toggle").addClass("fade_normal");
-	$("#toggle_div").css("display", "none");
+	$("#toggle_div").css("visibility", "hidden");
 	slider_toggled = false;
 	return true;
 }
@@ -290,15 +295,12 @@ function build_project_page(){
 	// Adding skill-wise filering system
 	var skills_obj = tab_data[3].data;
 
-	console.log(skills_obj);
-
 	// Sort according to the skill title
 	skills_obj.sort(function(a, b){
 		if(a.title < b.title) return -1;
 	    if(a.title > b.title) return 1;
 	    return 0;
 	});
-	console.log(skills_obj);
 
 	if(skills_obj !== undefined){
 		page_html += "<div class='row project-select'><div class='col-md-4 offset-md-8'><select class='form-control' name='project-selected-text'>";
@@ -309,7 +311,7 @@ function build_project_page(){
 		page_html += "</select></div></div><hr>";
 	}
 
-	page_html += "<div id='inner-project-div' class='container-fluid' style='overflow-y: scroll;'>";
+	page_html += "<div id='inner-project-div' class='container-fluid inner-scroll'>";
 	page_html += "</div>";
 
 	$("#inject").html(page_html);
@@ -326,6 +328,12 @@ function build_project_page(){
 		current_project_skill_selected = $(this).val();
 		build_inner_project(current_project_skill_selected);
 	});
+
+
+	// This is to resolve a bug that you can see projects below the nav button on some phones
+	if(ratio_phones > 1.4){
+		$("#inner-project-div").css("height", "75%");
+	}
 }
 
 // For filter system
@@ -415,8 +423,8 @@ function make_skills_section_in_modal(id = {}){
 */
 
 function build_skill_page(){
-	var page_html = "<div class='container-fluid'><h3 class='raleway_font'><i class='fas fa-code'></i> Skills & Proficiency</h3><hr>";
-	page_html += "<div class='row text-center' style='margin-bottom: 30px;'>";
+	var page_html = "<h3 class='raleway_font'><i class='fas fa-code'></i> Skills & Proficiency</h3><hr>";
+	page_html += "<div class='container-fluid inner-scroll'><div class='row text-center' style='margin-bottom: 30px;'>";
 	var skills = tab_data[3].data;
 
 	// Sort according to the skill level
@@ -459,8 +467,8 @@ function build_skill_page(){
 */
 
 function build_about_page(){
-	var page_html = "<div class='container-fluid'><h3 class='raleway_font'><i class='fas fa-user-circle'></i> About Me</h3><hr>";
-	page_html += "<div class='row raleway_font' style='padding-left: 5%; padding-right: 5%;'>";
+	var page_html = "<h3 class='raleway_font'><i class='fas fa-user-circle'></i> About Me</h3><hr>";
+	page_html += "<div class='container-fluid inner-scroll'><div class='row raleway_font' style='padding-left: 5%; padding-right: 5%;'>";
 
 	// Education part
 	page_html += "<div class='col-md-6'>";
@@ -513,7 +521,7 @@ function build_about_page(){
 */
 
 function build_experience_page(){
-	var page_html = "<h3 class='raleway_font'><i class='fas fa-users'></i> Experiences</h3><hr><div class='container-fluid' style='overflow-y: scroll;'>";
+	var page_html = "<h3 class='raleway_font'><i class='fas fa-users'></i> Experiences</h3><hr><div class='container-fluid inner-scroll' style='overflow-y: scroll;'>";
 	page_html += "<div class='row'>";
 	var experience = tab_data[2].data;
 	for(var i=0; i<experience.length; i++){
@@ -555,12 +563,12 @@ function make_experience_modal(){
 /*
 	SCREEN SIZE DETECTOR
 */
-
+var ratio_phones;
 function check_screen_type(){
 	var viewport_height = $(window).height();
 	var viewport_width = $(window).width();
 
-	var ratio_phones = viewport_height/viewport_width;
+	ratio_phones = viewport_height/viewport_width;
 
 	if(ratio_phones > 1.4){
 		// Smartphone
@@ -649,23 +657,3 @@ function num_to_text_month(num){
 	}
 	return text;
 }
-
-
-
-
-
-
-
-
-
-/*
-	FOR TOGGLE HOVER
-*/
-
-/*$("#toggle").hover(function(){
-	if(currently_visible_page === "home"){
-		$('#toggle').html("<span class='toggle_hover'>Explore</span>");
-	}
-}, function(){
-	$('#toggle').html("<i class='fas fa-bars'></i>");
-});*/

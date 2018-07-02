@@ -22,9 +22,20 @@
 	-o-transition: 0.75s ease-out;
 	transition: 0.75s ease-out;
 	border-radius: 10px;
-	padding: 2%;
+	padding: 1%;
 	opacity: 0.9;
-	padding-bottom: 2.5%;
+	overflow-y: scroll;
+}
+
+.main_nav {
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	bottom: 2%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	background-color: #FFF;
+	text-align: center;
 }
 
 .profile_img {
@@ -110,21 +121,21 @@
 }
 
 .fade_normal {
-	-webkit-transition: 0.75s ease-out;
-	-moz-transition: 0.75s ease-out;
-	-ms-transition: 0.75s ease-out;
-	-o-transition: 0.75s ease-out;
-	transition: 0.75s ease-out;
+	-webkit-transition: 0.5s ease-out;
+	-moz-transition: 0.5s ease-out;
+	-ms-transition: 0.5s ease-out;
+	-o-transition: 0.5s ease-out;
+	transition: 0.5s ease-out;
 	opacity: 1;
 	visibility: visible;
 }
 
 .fade_fade {
-	-webkit-transition: 0.75s ease-out;
-	-moz-transition: 0.75s ease-out;
-	-ms-transition: 0.75s ease-out;
-	-o-transition: 0.75s ease-out;
-	transition: 0.75s ease-out;
+	-webkit-transition: 0.5s ease-out;
+	-moz-transition: 0.5s ease-out;
+	-ms-transition: 0.5s ease-out;
+	-o-transition: 0.5s ease-out;
+	transition: 0.5s ease-out;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -187,6 +198,21 @@
 	opacity: 0.9;	
 }
 
+.nav-custom {
+	width: auto;
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 15px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: inherit;
+}
+
+.inner-scroll {
+	overflow-y: scroll;
+	height: 80%;
+}
+
 /*
 	ATTRIBUTES
 */
@@ -217,12 +243,19 @@ a {
 }
 
 #toggle_div {
-    display: none;
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	transform: translate(-50%, -80%);
+	z-index: 11;
+	background-color: #FFF;
+    visibility: hidden;
 }
 
 #toggle:hover {
 	text-decoration: none;
 }
+
 
 /*
 	FONTS

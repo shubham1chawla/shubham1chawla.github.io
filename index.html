@@ -34,12 +34,12 @@
 <!-- Starts here -->
 <div class="wrapper">
 	<div class="container-fluid">
-		<div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 card main_card" id="resize_element" style="overflow-y: scroll;">
+		<div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 card main_card" id="resize_element">
 
 			<!-- MAIN DRAW AREA -->
-			<div class="container-fluid" id="inject" style="display: none; overflow-y: scroll; padding-top: 20px;"></div>
+			<div class="container-fluid" id="inject" style="display: none; padding-top: 20px;"></div>
 			<!-- HOME DIV -->
-			<div class="container-fluid" id="home_div" style="overflow-y: scroll; padding-top: 20px;">
+			<div class="container-fluid" id="home_div" style="padding-top: 20px;">
 				<div class="container text-center">
 					<img src="img/profile.jpg" alt="profile" height="auto" width="200px" class="profile_img">
 					<h1 class="poiret">Shubham Chawla</h1>
@@ -56,29 +56,53 @@
 			</div>
 			
 			<!-- NAV -->
-			<div id="toggle_div" class="fade_fade raleway_font">
-				<nav class="navbar navbar-expand-sm justify-content-center">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a href="#" class="nav-link" id="home"><i class="fas fa-home"></i> Home</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" id="about"><i class="fas fa-user-circle"></i> About Me</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" id="projects"><i class="fas fa-project-diagram"></i> Projects</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" id="experiences"><i class="fas fa-users"></i> Experiences</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" id="skills"><i class="fas fa-code"></i> Skills & Proficiency</a>
-						</li>
-					</ul>
-				</nav>
+			<div class="main_nav">
+				<div id="toggle_div" class="fade_fade raleway_font">
+					<nav class="navbar navbar-expand-sm justify-content-center">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a href="#" class="nav-link" id="home">
+									<div class="nav-custom">
+										<i class="fas fa-home"></i> Home
+									</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link" id="about">
+									<div class="nav-custom">
+										<i class="fas fa-user-circle"></i> About Me
+									</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link" id="projects">
+									<div class="nav-custom">
+										<i class="fas fa-project-diagram"></i> Projects
+									</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link" id="experiences">
+									<div class="nav-custom">
+										<i class="fas fa-users"></i> Experiences
+									</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link" id="skills">
+									<div class="nav-custom">
+										<i class="fas fa-code"></i> Proficiency
+									</div>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<a class="fade_normal" href="#" id="toggle"><i class="fas fa-bars"></i></a>
 			</div>
-			<a class="fade_normal" href="#" style="text-align: center;" id="toggle"><i class="fas fa-bars"></i></a>
 		</div>
+
+		<!-- FOOTER -->
 		<div class="footer raleway_font">
 			Designed with <i class='fas fa-heart'></i> by <strong>Shubham Chawla</strong>
 		</div>
