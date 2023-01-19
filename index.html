@@ -1,143 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shubham Chawla | Portfolio</title>
 
-	<!-- For SEO -->
-	<meta name="description" content="Shubham Chawla Web Portfolio">
-	<meta name="author" content="Shubham Chawla">
+    <!-- Adding Portfolio's CSS -->
+    <link rel="stylesheet" href="styles.css" />
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css">
+    <!-- Adding Portfolio's Script -->
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <i class="scroll-up">&#129171;</i>
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway" rel="stylesheet">
+    <!-- Introduction -->
+    <section>
+      <header>
+        <h1>Shubham Chawla</h1>
+        <p>Computer Science Graduate at <strong>Arizona State University</strong></p>
+      </header>
+      <i class="scroll-down">&#129171;</i>
+    </section>
 
-	<!-- Font awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- About Me -->
+    <section>
+      <h2 id="about-me"><a href="#about-me">About Me</a></h2>
+      <div class="about">
+        <div>
+          <h3>Who am I?</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+            tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+          </p>
+        </div>
+        <hr />
+        <div>
+          <h3>What can I do for you?</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+            tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+          </p>
+          <ul>
+            <li>Design <strong>User Interfaces</strong></li>
+            <li>Architect <strong>Backend Applications</strong></li>
+            <li>Develop <strong>Rest APIs</strong></li>
+            <li>Optimize <strong>Database Queries</strong></li>
+            <li>Shoot <strong>Cinematic Videos</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-	<!-- Other js -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/typed.min.js"></script>
+    <!-- Timeline -->
+    <section>
+      <h2 id="experience"><a href="#experience">Experience</a></h2>
+      <div class="timeline">
+        <!-- ASU -->
+        <div class="node">
+          <div class="image image-color-mask asu"></div>
+          <div class="body">
+            <h3>Computer Science (MS)</h3>
+            <h3>
+              <a href="https://www.asu.edu/" target="_blank" rel="noopener noreferrer">
+                Arizona State University, United States
+              </a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
 
-	<title>Shubham Chawla | Portfolio</title>
-</head>
-<body>
+        <div class="divider">
+          <div class="divider-content">2023</div>
+        </div>
 
-<!-- PARTICLE JS -->	
-<div class="particles" id="particles-js"></div>
+        <!-- BlackRock -->
+        <div class="node">
+          <div class="image image-color-mask blackrock"></div>
+          <div class="body">
+            <h3>Software Engineer 2</h3>
+            <h3>
+              <a href="https://www.blackrock.com/corporate" target="_blank" rel="noopener noreferrer">
+                BlackRock, India
+              </a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
 
-<!-- Starts here -->
-<div class="wrapper">
-	<div class="container-fluid">
-		<div class="col-md-10 offset-md-1 col-sm-10 offset-sm-1 card main_card" id="resize_element">
+        <div class="divider">
+          <div class="divider-content">2019</div>
+        </div>
 
-			<!-- MAIN DRAW AREA -->
-			<div class="container-fluid" id="inject" style="display: none; padding-top: 20px;"></div>
-			<!-- HOME DIV -->
-			<div class="container-fluid" id="home_div" style="padding-top: 20px;">
-				<div class="container text-center">
-					<img src="img/profile.jpg" alt="profile" height="auto" width="200px" class="profile_img">
-					<h1 class="poiret">Shubham Chawla</h1>
-					<p class="raleway_font"><span id="highfyLines" class="fade_normal tagline"></span></p>
-					<hr>
-					<!-- Social Handles -->
-					<div id="facebook" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.facebook.com/profile.php?id=100001155159356"><i class="fab fa-facebook-square"></i></a></div>
-					<div id="linkedin" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.linkedin.com/in/shubham1chawla"><i class="fab fa-linkedin"></i></a></div>
-					<div id="mail" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="mailto: shubham_chawla@live.com"><i class="fas fa-envelope-square"></i></a></div>
-					<div id="github" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://www.github.com/shubham1chawla"><i class="fab fa-github-square"></i></a></div>
-					<div id="resume" class="d-inline" style="font-size: 1.6em; padding: 5px;"><a href="https://drive.google.com/open?id=13l1vvCrakxNvkRI_AVB_QtP9QgBzvp5A"><i class="fas fa-pen-square"></i></a></div>
-					<span id="info" class='raleway_font' style="display: none"></span>
-				</div>
-			</div>
-			
-			<!-- NAV -->
-			<div class="main_nav">
-				<div id="toggle_div" class="fade_fade raleway_font">
-					<nav class="navbar navbar-expand-sm justify-content-center">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a href="#" class="nav-link" id="home">
-									<div class="nav-custom">
-										<i class="fas fa-home"></i> Home
-									</div>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link" id="about">
-									<div class="nav-custom">
-										<i class="fas fa-user-circle"></i> About Me
-									</div>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link" id="projects">
-									<div class="nav-custom">
-										<i class="fas fa-project-diagram"></i> Projects
-									</div>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link" id="experiences">
-									<div class="nav-custom">
-										<i class="fas fa-users"></i> Experiences
-									</div>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#" class="nav-link" id="skills">
-									<div class="nav-custom">
-										<i class="fas fa-code"></i> Proficiency
-									</div>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<a class="fade_normal" href="#" id="toggle"><i class="fas fa-bars"></i></a>
-			</div>
-		</div>
+        <!-- Thapar -->
+        <div class="node">
+          <div class="image image-color-mask thapar"></div>
+          <div class="body">
+            <h3>Electronics & Communications Engineering (BE)</h3>
+            <h3>
+              <a href="https://www.thapar.edu/" target="_blank" rel="noopener noreferrer">
+                Thapar Institute of Engineering & Technology, India
+              </a>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- FOOTER -->
-		<div class="footer raleway_font">
-			Designed with <i class='fas fa-heart'></i> by <strong>Shubham Chawla</strong>
-		</div>
-	</div>
-</div>
+    <!-- Projects -->
+    <section>
+      <h2 id="projects"><a href="#projects">Projects</a></h2>
+      <div class="projects">
+        <!-- Payments Netting Services -->
+        <div class="project">
+          <div class="image image-color-mask netting"></div>
+          <div class="body">
+            <h3>Payments Netting Services</h3>
+            <h3>BlackRock</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
 
+        <!-- Settlement Manager -->
+        <div class="project">
+          <div class="image image-color-mask settlement"></div>
+          <div class="body">
+            <h3>Settlement Manager</h3>
+            <h3>BlackRock</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
-	<div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content" style="padding: 5%;">
+        <!-- The Strategists -->
+        <div class="project">
+          <div class="image image-color-mask strategists"></div>
+          <div class="body">
+            <h3>The Strategists</h3>
+            <h3>Thapar Institute of Engineering & Technology</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
 
-		<!-- Modal Header -->
-		<div class="modal-header">
-			<h4 class="modal-title raleway_font" id="modal_heading">Modal Heading</h4>
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-		</div>
+        <!-- 3D Scanner -->
+        <div class="project">
+          <div class="image image-color-mask scanner"></div>
+          <div class="body">
+            <h3>3D Scanner</h3>
+            <h3>Thapar Institute of Engineering & Technology</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nunc dolor, elementum eu justo non, laoreet
+              tincidunt metus. Etiam nec erat lacinia, congue diam et, consequat ex.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- Modal body -->
-		<div class="modal-body raleway_font" id="modal_body">
-			Modal body..
-		</div>
+    <!-- Contact -->
+    <section>
+      <h2 id="socials"><a href="#socials">Socials</a></h2>
 
-		<!-- Modal footer -->
-		<div class="modal-footer">
-			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-		</div>
+      <div class="contacts">
+        <!-- Social Icons -->
+        <div class="socials">
+          <!-- LinkedIn Icon -->
+          <div class="social">
+            <div class="image image-color-mask linkedin"></div>
+          </div>
 
-		</div>
-	</div>
-</div>
+          <!-- Youtube Icon -->
+          <div class="social">
+            <div class="image image-color-mask youtube"></div>
+          </div>
 
-<script type="text/javascript" src="js/data.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script src="js/particles.min.js"></script>
-<script src="js/app.js"></script>
-</body>
+          <!-- Telegram Icon -->
+          <div class="social">
+            <div class="image image-color-mask telegram"></div>
+          </div>
+
+          <!-- GitHub Icon -->
+          <div class="social">
+            <div class="image image-color-mask github"></div>
+          </div>
+        </div>
+
+        <div class="divider">
+          <div class="divider-content">Contact me?</div>
+        </div>
+
+        <!-- Email Contact -->
+        <form>
+          <input name="subject" type="text" placeholder="What should be the email's subject?" />
+          <textarea name="body" rows="4" cols="50" placeholder="What's your message?"></textarea>
+          <input type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+  </body>
 </html>
+

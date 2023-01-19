@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* 
+  Colors variables defined below 
+  */
+  --accent-color: #c0392b;
+  --light-color: gainsboro;
+  --dark-color: #1f1f1f;
+
+  /* 
+  Dimensions variables defined below
+  */
+  --unit-rem: 1.2rem;
+  --white-space-size: calc(var(--unit-rem) * 2);
+  --border-width: calc(var(--unit-rem) / 6);
+  --icon-size: calc(var(--unit-rem) * 3);
+  --section-max-width: calc(var(--unit-rem) * 50);
+  --image-width: calc(var(--unit-rem) * 10);
+  --image-height: calc(var(--unit-rem) * 7.5);
+  --row-gap-size: calc(var(--unit-rem) * 4);
+
+  /* 
+  Fonts variables defined below
+  */
+  --heading-font: 'Bebas Neue', cursive;
+  --content-font: 'Montserrat', sans-serif;
+  --heading-font-size: calc(var(--unit-rem) * 2);
+  --content-font-size: calc(var(--unit-rem) * 1.25);
+  --special-heading-font-size: calc(4vw + 4vh);
+  --icon-font-size: calc(var(--unit-rem) * 4);
+
+  /* 
+  Miscellaneous variables defined below
+  */
+  --basic-transition: all 1s ease;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--light-color);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  color: var(--dark-color);
+}
+
+.divider {
+  align-self: center;
+  height: var(--border-width);
+  width: 75%;
+  background-color: var(--accent-color);
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider > .divider-content {
+  background-color: var(--light-color);
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  padding: 0rem var(--white-space-size);
+}
+
+.image-color-mask {
+  /* Adding color overlay to the PNG*/
+  -webkit-mask: var(--image-url) center/contain no-repeat;
+  mask: var(--image-url) center/contain no-repeat;
+  background-image: var(--image-url) center/contain no-repeat;
+  background-blend-mode: darken;
+  background-color: var(--dark-color);
+}
+
+/* 
+-------------------------------------------------------
+Introduction-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+header {
+  position: absolute;
+  top: 65%;
+  margin: 0rem var(--white-space-size);
+  padding: var(--white-space-size) var(--white-space-size);
+  display: grid;
+  color: var(--light-color);
+  border-left: var(--border-width) solid var(--light-color);
+  border-radius: var(--border-width) 0rem 0rem var(--border-width);
+}
+
+header * {
+  color: var(--light-color);
+}
+
+h1 {
+  font-family: var(--heading-font);
+  font-size: var(--special-heading-font-size);
+  line-height: 80%;
+  font-weight: normal;
+}
+
+/* 
+-------------------------------------------------------
+Section-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+section:first-of-type {
+  height: 100vh;
+  background: url('img/background.jpeg');
+  background-size: cover;
+  background-position: 50% 20%;
+  filter: saturate(75%) sepia(25%);
+}
+
+section:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.75), var(--accent-color));
+  background-size: 300% 300%;
+  opacity: 0.75;
+  animation: background-gradient-animation 10s infinite;
+}
+
+@keyframes background-gradient-animation {
+  0% {
+    background-position-x: 0%;
+  }
+  50% {
+    background-position-x: 75%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
+}
+
+section:not(:first-of-type) {
+  width: 75%;
+  max-width: var(--section-max-width);
+  margin: 0rem auto;
+  min-height: 100vh;
+}
+
+h2 {
+  font-family: var(--heading-font);
+  font-size: var(--special-heading-font-size);
+  margin: calc(var(--white-space-size) * 3) auto;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* 
+-------------------------------------------------------
+Typography-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+h3 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+  font-weight: normal;
+}
+
+p {
+  font-family: var(--content-font);
+  font-size: var(--content-font-size);
+  text-align: justify;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+/* 
+-------------------------------------------------------
+Icon-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+i {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--icon-font-size);
+  cursor: pointer;
+  transition: var(--basic-transition);
+}
+
+i.scroll-up {
+  position: fixed;
+  z-index: 99;
+  bottom: var(--white-space-size);
+  right: var(--white-space-size);
+  border: var(--border-width) solid var(--accent-color);
+  background-color: var(--accent-color);
+  color: var(--light-color);
+  transform: rotateX(180deg);
+  box-shadow: black 0rem 0rem 0rem;
+  opacity: 0;
+}
+
+i.scroll-down {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.5%;
+  border: var(--border-width) solid var(--light-color);
+  color: var(--light-color);
+  animation: scroll-down-icon-animation 1.5s infinite;
+}
+
+@keyframes scroll-down-icon-animation {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* 
+-------------------------------------------------------
+About-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+.about {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--row-gap-size);
+}
+
+hr {
+  border: calc(var(--border-width) / 2) solid var(--accent-color);
+}
+
+ul {
+  margin: var(--white-space-size) auto;
+  font-family: var(--content-font);
+  font-size: var(--content-font-size);
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+ul li::before {
+  content: '\1F89C';
+  color: var(--accent-color);
+  display: inline-block;
+  width: var(--white-space-size);
+  font-weight: bold;
+}
+
+/* 
+-------------------------------------------------------
+Timeline-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+.timeline {
+  display: grid;
+  row-gap: var(--row-gap-size);
+}
+
+.timeline > .node {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.node > .image {
+  margin: auto var(--white-space-size);
+  flex-basis: var(--image-width);
+  height: var(--image-height);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.node > .asu {
+  --image-url: url('https://www.asu.edu/sites/default/files/styles/footer_logo/public/2022-02/ASU-EndorsedLogo.png');
+}
+
+.node > .blackrock {
+  --image-url: url('https://www.blackrock.com/blk-corp-assets/cache-1542297736000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg');
+}
+
+.node > .thapar {
+  --image-url: url('https://www.thapar.edu/images/logo.png');
+}
+
+.node > .body {
+  flex-basis: min(100%, calc(var(--section-max-width) - var(--image-width) - var(--white-space-size) * 2));
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+-------------------------------------------------------
+Projects-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      calc(
+        var(--section-max-width) / 2 - 2 * var(--border-width) - 2 * var(--white-space-size) - var(--row-gap-size) / 2
+      ),
+      1fr
+    )
+  );
+  gap: var(--row-gap-size);
+}
+
+.projects > .project {
+  display: flex;
+  flex-direction: column;
+  padding: var(--white-space-size);
+  border: var(--border-width) solid var(--accent-color);
+}
+
+.project > .image {
+  height: var(--image-height);
+  width: 100%;
+  margin-bottom: var(--white-space-size);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.project > .netting {
+  --image-url: url('https://cdn-icons-png.flaticon.com/512/6741/6741078.png');
+}
+
+.project > .settlement {
+  --image-url: url('https://cdn-icons-png.flaticon.com/512/2781/2781997.png');
+}
+
+.project > .strategists {
+  --image-url: url('https://cdn-icons-png.flaticon.com/512/3079/3079330.png');
+}
+
+.project > .scanner {
+  --image-url: url('https://cdn-icons-png.flaticon.com/512/1486/1486566.png');
+}
+
+.project > .body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+-------------------------------------------------------
+Contacts-related Classes Defined Below
+-------------------------------------------------------
+*/
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  row-gap: var(--row-gap-size);
+}
+
+.contacts > .socials {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.socials > .social {
+  height: var(--image-height);
+  flex-basis: var(--image-width);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.social > .image {
+  cursor: pointer;
+  height: var(--image-height);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: var(--basic-transition);
+}
+
+.social > .image:hover {
+  transform: scale(1.1);
+}
+
+.social > .linkedin {
+  --image-url: url('https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Linkedin2_svg-1024.png');
+}
+
+.social > .youtube {
+  --image-url: url('https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Youtube3_svg-1024.png');
+}
+
+.social > .telegram {
+  --image-url: url('https://cdn2.iconfinder.com/data/icons/free-social-media-16/24/Telegram-1024.png');
+}
+
+.social > .github {
+  --image-url: url('https://cdn1.iconfinder.com/data/icons/capsocial/500/github-1024.png');
+}
+
+form {
+  display: grid;
+  width: 100%;
+  row-gap: var(--row-gap-size);
+}
+
+form > * {
+  border: var(--border-width) solid var(--dark-color);
+  background-color: var(--light-color);
+  padding: var(--white-space-size);
+  font-family: var(--content-font);
+  font-size: var(--content-font-size);
+}
+
+form > textarea {
+  resize: none;
+}
+
+form > input[type='submit'] {
+  cursor: pointer;
+  border: var(--border-width) solid var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  font-family: var(--heading-font);
+  font-size: var(--heading-font-size);
+}
+
