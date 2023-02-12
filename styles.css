@@ -37,6 +37,12 @@
   --basic-transition: all 1s ease;
 }
 
+/* 
+-------------------------------------------------------
+Common Rules Defined Below
+-------------------------------------------------------
+*/
+
 html {
   font-size: 62.5%;
   background-color: var(--light-color);
@@ -66,6 +72,13 @@ html {
   padding: 0rem var(--white-space-size);
 }
 
+.image {
+  height: var(--image-height);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .image-color-mask {
   /* Adding color overlay to the PNG*/
   -webkit-mask: var(--image-url) center/contain no-repeat;
@@ -73,6 +86,23 @@ html {
   background-image: var(--image-url) center/contain no-repeat;
   background-blend-mode: darken;
   background-color: var(--dark-color);
+}
+
+.fade {
+  transition: var(--basic-transition);
+  transition-delay: 500ms;
+}
+
+.fade-out {
+  filter: blur(100%);
+  transform: translateX(-15%);
+  opacity: 0;
+}
+
+.fade-in {
+  filter: blur(0%);
+  transform: translateX(0%);
+  opacity: 1;
 }
 
 /* 
@@ -200,6 +230,7 @@ i {
   font-size: var(--icon-font-size);
   cursor: pointer;
   transition: var(--basic-transition);
+  user-select: none;
 }
 
 i.scroll-up {
@@ -212,7 +243,16 @@ i.scroll-up {
   color: var(--light-color);
   transform: rotateX(180deg);
   box-shadow: black 0rem 0rem 0rem;
+}
+
+i.hidden {
   opacity: 0;
+  cursor: default;
+}
+
+i.visible {
+  opacity: 1;
+  cursor: pointer;
 }
 
 i.scroll-down {
@@ -249,8 +289,8 @@ About-related Classes Defined Below
   row-gap: var(--row-gap-size);
 }
 
-hr {
-  border: calc(var(--border-width) / 2) solid var(--accent-color);
+.about .divider {
+  margin: 0px auto;
 }
 
 ul {
@@ -259,6 +299,7 @@ ul {
   font-size: var(--content-font-size);
   list-style-position: inside;
   list-style-type: none;
+  line-height: var(--white-space-size);
 }
 
 ul li::before {
@@ -291,22 +332,18 @@ Timeline-related Classes Defined Below
 .node > .image {
   margin: auto var(--white-space-size);
   flex-basis: var(--image-width);
-  height: var(--image-height);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
-.node > .asu {
-  --image-url: url('https://www.asu.edu/sites/default/files/styles/footer_logo/public/2022-02/ASU-EndorsedLogo.png');
+.node > .image.asu {
+  --image-url: url('img/ASU.png');
 }
 
-.node > .blackrock {
-  --image-url: url('https://www.blackrock.com/blk-corp-assets/cache-1542297736000/images/media-bin/web/global/wordmark/blackrock-logo-nav.svg');
+.node > .image.blackrock {
+  --image-url: url('img/blackrock.png');
 }
 
-.node > .thapar {
-  --image-url: url('https://www.thapar.edu/images/logo.png');
+.node > .image.thapar {
+  --image-url: url('img/thapar.png');
 }
 
 .node > .body {
@@ -325,12 +362,7 @@ Projects-related Classes Defined Below
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(
-      calc(
-        var(--section-max-width) / 2 - 2 * var(--border-width) - 2 * var(--white-space-size) - var(--row-gap-size) / 2
-      ),
-      1fr
-    )
+    minmax(calc(var(--section-max-width) / 2 - 2 * var(--border-width) - 2 * var(--white-space-size) - var(--row-gap-size) / 2), 1fr)
   );
   gap: var(--row-gap-size);
 }
@@ -343,27 +375,23 @@ Projects-related Classes Defined Below
 }
 
 .project > .image {
-  height: var(--image-height);
   width: 100%;
   margin-bottom: var(--white-space-size);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
-.project > .netting {
+.project > .image.netting {
   --image-url: url('https://cdn-icons-png.flaticon.com/512/6741/6741078.png');
 }
 
-.project > .settlement {
+.project > .image.settlement {
   --image-url: url('https://cdn-icons-png.flaticon.com/512/2781/2781997.png');
 }
 
-.project > .strategists {
+.project > .image.strategists {
   --image-url: url('https://cdn-icons-png.flaticon.com/512/3079/3079330.png');
 }
 
-.project > .scanner {
+.project > .image.scanner {
   --image-url: url('https://cdn-icons-png.flaticon.com/512/1486/1486566.png');
 }
 
@@ -382,13 +410,15 @@ Contacts-related Classes Defined Below
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   row-gap: var(--row-gap-size);
 }
 
 .contacts > .socials {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: var(--row-gap-size);
 }
 
 .socials > .social {
@@ -401,10 +431,6 @@ Contacts-related Classes Defined Below
 
 .social > .image {
   cursor: pointer;
-  height: var(--image-height);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
   transition: var(--basic-transition);
 }
 
@@ -440,6 +466,10 @@ form > * {
   padding: var(--white-space-size);
   font-family: var(--content-font);
   font-size: var(--content-font-size);
+}
+
+form > *:focus {
+  outline-color: var(--accent-color);
 }
 
 form > textarea {
