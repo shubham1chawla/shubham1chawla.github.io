@@ -35,10 +35,14 @@ a:visited,
 a:focus {
     color: var(--accent-color);
     text-decoration: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 a[target="_blank"]::after {
-    content: '\2197';
+    content: url(../assets/new-tab.svg);
+    margin-left: 2px;
 }
 
 a[role="button"] {
@@ -188,7 +192,7 @@ section.projects>main p.description {
     max-width: calc(var(--section-max-width) - 400px);
 }
 
-section.projects>main div.technologies {
+section.projects>main div.buttons {
     display: flex;
     flex-wrap: wrap;
     gap: var(--medium-unit);
