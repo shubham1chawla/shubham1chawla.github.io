@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+:root {
+    --font-family: Trocchi, serif;
+    --heading-font-size: min(8vw, 8rem);
+    --font-size: min(6vw, 1.8rem);
+
+    --section-width: 90%;
+    --section-max-width: 1200px;
+
+    --accent-color: #f39c12;
+
+    --small-unit: 1rem;
+    --medium-unit: 2rem;
+    --large-unit: 4rem;
+
+    font-family: var(--font-family);
+    font-size: 62.5%;
+}
+
+hr {
+    width: min(50rem, 60%);
+    margin: var(--large-unit) auto;
+    border: 1px solid black;
+}
+
+a,
+a:visited,
+a:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a[target="_blank"]::after {
+    content: '\2197';
+}
+
+a[role="button"] {
+    border: 1px solid var(--accent-color);
+    border-radius: var(--small-unit);
+    padding: 0 var(--small-unit);
+    transition: all 400ms ease;
+}
+
+a[role="button"]:hover {
+    transform: translateX(var(--small-unit));
+}
+
+section {
+    min-height: 100svh;
+    width: var(--section-width);
+    max-width: var(--section-max-width);
+    margin: auto;
+    font-size: var(--font-size);
+}
+
+section>header {
+    font-size: var(--heading-font-size);
+}
+
+section.landing {
+    display: flex;
+    flex: auto 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.landing>header {
+    margin: auto 0;
+}
+
+section.landing>footer {
+    align-self: center;
+}
+
+section.landing>footer>button {
+    background: none;
+    border: none;
+    font-size: var(--heading-font-size);
+    padding: var(--medium-unit) 0;
+    animation: scroll-down-icon-animation 1.5s infinite;
+}
+
+@keyframes scroll-down-icon-animation {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(var(--medium-unit));
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+section.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--large-unit);
+}
+
+section.about>main {
+    max-width: calc(var(--section-max-width) - 400px);
+}
+
+section.about>footer {
+    display: flex;
+    gap: var(--medium-unit);
+}
+
+section.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-unit);
+}
+
+section.projects>main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-unit);
+}
+
+section.projects>main div.projects__project {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-unit);
+}
+
+section.projects>main div.slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: mandatory;
+}
+
+section.projects>main div.slides::-webkit-scrollbar {
+    width: var(--small-unit);
+    height: var(--small-unit);
+}
+
+section.projects>main div.slides::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: var(--small-unit);
+}
+
+section.projects>main div.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+section.projects>main div.slides>div.slide {
+    position: relative;
+    display: flex;
+    margin: 0 var(--medium-unit) var(--medium-unit) 0;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    border-radius: var(--small-unit);
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    font-size: 100px;
+}
+
+section.projects>main div.slides>div.slide-16-9 {
+    width: min(60rem, 90%);
+    aspect-ratio: 16/9;
+}
+
+section.projects>main div.slides>div.slide-9-16 {
+    width: min(30rem, 90%);
+    aspect-ratio: 9/16;
+}
+
+section.projects>main p.description {
+    max-width: calc(var(--section-max-width) - 400px);
+}
+
+section.projects>main div.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--medium-unit);
+}
+
+section.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--large-unit);
+}
+
+section.contact>main {
+    max-width: calc(var(--section-max-width) - 400px);
+}
+
+section.contact>main p>i {
+    color: var(--accent-color);
+}
