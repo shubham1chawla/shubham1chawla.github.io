@@ -171,21 +171,21 @@ section.projects>main div.slides>div.slide {
     align-items: center;
     scroll-snap-align: start;
     border-radius: var(--small-unit);
-    background: #eee;
     transform-origin: center center;
     transform: scale(1);
     transition: transform 0.5s;
-    font-size: 100px;
+    width: min(60rem, 100%);
+    background-image: var(--background-url);
+    background-size: cover;
+    background-position: center;
 }
 
 section.projects>main div.slides>div.slide-16-9 {
-    width: min(60rem, 90%);
     aspect-ratio: 16/9;
 }
 
-section.projects>main div.slides>div.slide-9-16 {
-    width: min(30rem, 90%);
-    aspect-ratio: 9/16;
+section.projects>main div.slides>div.slide-4-3 {
+    aspect-ratio: 4/3;
 }
 
 section.projects>main p.description {
