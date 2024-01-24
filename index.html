@@ -1,269 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham Chawla | Portfolio</title>
 
-    <!-- Adding Portfolio's CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Style-related imports -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <!-- Adding Portfolio's Script -->
-    <script defer src="app.js"></script>
-  </head>
-  <body>
-    <i class="scroll-up hidden">&#129171;</i>
+<body>
 
-    <!-- Introduction -->
-    <section>
-      <header>
-        <h1>Shubham Chawla</h1>
-        <p>Computer Science Graduate at <strong>Arizona State University</strong></p>
-      </header>
-      <i class="scroll-down">&#129171;</i>
+    <!-- Landing section -->
+    <section class="landing">
+        <header>
+            <span>&#x1F44B;</span>
+            <span>
+                Hello there! <br />
+                I'm Shubham Chawla!
+            </span>
+        </header>
+        <footer>
+            <button>&#x1F447;</button>
+        </footer>
     </section>
 
-    <!-- About Me -->
-    <section>
-      <h2 id="about-me"><a href="#about-me">About Me</a></h2>
-      <div class="about">
-        <div class="divider">
-          <div class="divider-content">Who am I?</div>
-        </div>
-        <div class="fade fade-out">
-          <p>
-            Hey there, I am <strong>Shubham Chawla</strong>, currently pursuing my <strong>Master of Science in Computer Science</strong> at
-            <strong>Arizona State University</strong>. Previously, I worked at <strong>BlackRock</strong> as an <strong>Associate</strong> before joining my
-            graduate studies. During my four years of professional experience, I have worked on various tech stacks, including <strong>Angular</strong>,
-            <strong>React</strong>, and <strong>Springboot</strong>.
-          </p>
-          <br />
-          <p>
-            Additionally, as a <strong>global citizen</strong>, I advocate for a <strong>greener future</strong> and volunteer at various events outside my
-            academic and professional circles.
-          </p>
-        </div>
-        <div class="divider">
-          <div class="divider-content">What can I do?</div>
-        </div>
-        <div class="fade fade-out">
-          <p>
-            I am a <strong>creative person</strong> who loves to code! My proficiencies range from <strong>developing web applications</strong> to
-            <strong>designing digital assets</strong> to <strong>shooting leisure videos</strong> for YouTube. These multifold interests helped me try new
-            things and grow every day.
-          </p>
-          <br />
-          <p>To summarize, I can -</p>
-          <ul>
-            <li>Design <strong>User Interfaces</strong></li>
-            <li>Architect <strong>Backend Applications</strong></li>
-            <li>Develop <strong>Rest APIs</strong></li>
-            <li>Optimize <strong>Database Queries</strong></li>
-            <li>Shoot <strong>Cinematic Videos</strong></li>
-            <li>Draw <strong>Illustrations</strong></li>
-            <li>Create <strong>Digital Assets</strong></li>
-          </ul>
-        </div>
-      </div>
+    <!-- About section -->
+    <section class="about">
+        <header>
+            <span>&#x1F9D1; Who am I?</span>
+        </header>
+        <main>
+            <p>
+                I'm a Computer Science graduate student at
+                <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>
+                with four years of software
+                development experience from
+                <a href="https://www.blackrock.com/" target="_blank">BlackRock</a>
+                . I'm currently seeking internship opportunities in the United
+                States.
+            </p>
+        </main>
+        <footer>
+            <a role="button" href="https://drive.google.com/file/d/1rgNaaGQo2VbV3_PdTqlbp1B0GKqm_lYw/" target="_blank">Resume</a>
+            <a role="button" href="https://www.linkedin.com/in/shubham1chawla/" target="_blank">LinkedIn</a>
+            <a role="button" href="https://github.com/shubham1chawla" target="_blank">GitHub</a>
+        </footer>
     </section>
 
-    <!-- Timeline -->
-    <section>
-      <h2 id="experience"><a href="#experience">Experience</a></h2>
-      <div class="timeline">
-        <!-- ASU -->
-        <div class="node fade fade-out">
-          <div class="image image-color-mask asu"></div>
-          <div class="body">
-            <h3>Computer Science (MS)</h3>
-            <h3>
-              <a href="https://www.asu.edu/" target="_blank" rel="noopener noreferrer"> Arizona State University, USA </a>
-            </h3>
-            <br />
-            <p>
-              Joined in the Spring of 2023, I am currently studying <strong>Software Security</strong>, <strong>Cloud Computing</strong>, and
-              <strong>Foundations of Algorithms</strong>. I am also volunteering at <strong>International Students and Scholars Center (ISSC)</strong> as a
-              Content Creator.
-            </p>
-          </div>
-        </div>
+    <!-- Projects section -->
+    <section class="projects">
+        <header>
+            <span>&#x1F4BB; What have I built?</span>
+        </header>
+        <main>
 
-        <div class="divider">
-          <div class="divider-content">2023</div>
-        </div>
+            <!-- The Strategists -->
+            <div class="projects__project">
+                <h3>Web Applications with Stunning Designs & Visualizations &#x2705;</h3>
+                <div class="slides">
+                    <div class="slide slide-16-9">1</div>
+                    <div class="slide slide-16-9">2</div>
+                    <div class="slide slide-16-9">3</div>
+                    <div class="slide slide-16-9">4</div>
+                    <div class="slide slide-16-9">5</div>
+                </div>
+                <p class="description">
+                    <a href="https://github.com/shubham1chawla/the-strategists-remastered" target="_blank">The Strategists</a>
+                    is a Monopoly-inspired online multiplayer game.
+                    The game allows players to invest in properties, but with a <i>twist</i>!
+                    Unlike Monopoly, players can also invest partially, adding a layer of strategy!
+                </p>
+                <h4>Tech Stack</h4>
+                <div class="technologies">
+                    <a role="button" href="https://react.dev/" target="_blank">React</a>
+                    <a role="button" href="https://spring.io/projects/spring-boot/" target="_blank">Spring Boot</a>
+                    <a role="button" href="https://www.python.org/" target="_blank">Python</a>
+                </div>
+            </div>
 
-        <!-- BlackRock -->
-        <div class="node fade fade-out">
-          <div class="image image-color-mask blackrock"></div>
-          <div class="body">
-            <h3>Associate</h3>
-            <h3>
-              <a href="https://www.blackrock.com/corporate" target="_blank" rel="noopener noreferrer"> BlackRock, India </a>
-            </h3>
-            <br />
-            <p>
-              Starting as an <strong>Intern</strong> in January 2019, I prototyped a web application that <strong>visualized trades' lifecycles</strong>. After
-              full-time enrollment as an <strong>Analyst</strong>, I worked on various post-trade services, including the
-              <strong>management of payments</strong> in the system.
-            </p>
-            <br />
-            <p>
-              After being promoted to an <strong>Associate</strong> in 2021, I was responsible for <strong>developing microservices architecture</strong> to
-              optimize
-              <a href="https://www.investopedia.com/terms/f/financial-information-exchange.asp" target="_blank" rel="noopener noreferrer">FIX</a>
-              and
-              <a href="https://www.swift.com/" target="_blank" rel="noopener noreferrer">SWIFT</a>
-              financial network utilization.
-            </p>
-          </div>
-        </div>
+            <hr />
 
-        <div class="divider">
-          <div class="divider-content">2019</div>
-        </div>
+            <!-- Wellness AI -->
+            <div class="projects__project">
+                <h3>iOS Apps Infused with AI Magic &#x2705;</h3>
+                <div class="slides">
+                    <div class="slide slide-9-16">1</div>
+                    <div class="slide slide-9-16">2</div>
+                    <div class="slide slide-9-16">3</div>
+                    <div class="slide slide-9-16">4</div>
+                    <div class="slide slide-9-16">5</div>
+                </div>
+                <p class="description">
+                    <a href="https://github.com/shubham1chawla/WellnessAI" target="_blank">WellnessAI</a> 
+                    is an AI companion designed to revolutionize how we prioritize and manage our well-being.
+                    It generates user's comprehensive health profile, gathers location and calendar information,
+                    and generates personalized and wellness-focused suggestions.
+                </p>
+                <h4>Tech Stack</h4>
+                <div class="technologies">
+                    <a role="button" href="https://developer.apple.com/xcode/swiftui/" target="_blank">SwiftUI</a>
+                    <a role="button" href="https://openai.com/chatgpt" target="_blank">ChatGPT</a>
+                </div>
+            </div>
 
-        <!-- Thapar -->
-        <div class="node fade fade-out">
-          <div class="image image-color-mask thapar"></div>
-          <div class="body">
-            <h3>Electronics & Communications (BE)</h3>
-            <h3>
-              <a href="https://www.thapar.edu/" target="_blank" rel="noopener noreferrer"> Thapar Institute of Engineering & Technology, India </a>
-            </h3>
-            <br />
-            <p>
-              I entered Thapar Institute's engineering campus in July 2015 to explore a
-              <strong>career in technology</strong>. With a <strong>knack for creating</strong>, I involved myself in various academic projects and
-              extracurricular activities, maintained <strong>good academic standing</strong>, and eventually became the
-              <strong>
-                <a href="https://www.thapar.edu/students/pages/saic" target="_blank" rel="noopener noreferrer"> Student Alumni Interaction Cell (SAIC) </a>
-                student president
-              </strong>
-              in December 2017.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <hr />
 
-    <!-- Projects -->
-    <section>
-      <h2 id="projects"><a href="#projects">Projects</a></h2>
-      <div class="projects">
-        <!-- Payments Netting Services -->
-        <div class="project fade fade-out">
-          <div class="image image-color-mask netting"></div>
-          <div class="body">
-            <h3>Payments Netting Services</h3>
-            <h3>BlackRock</h3>
-            <br />
-            <p>
-              This project required <strong>developing 3+ microservices</strong> to handle payment netting to <strong>optimize usage</strong> of financial
-              telecommunication networks, such as
-              <a href="https://www.investopedia.com/terms/f/financial-information-exchange.asp" target="_blank" rel="noopener noreferrer">FIX</a>
-              and
-              <a href="https://www.swift.com/" target="_blank" rel="noopener noreferrer">SWIFT</a>. I <strong>analyzed existing fragmented solutions</strong>,
-              part of a monolithic service, and <strong>designed a configurable centralized architecture</strong> to expose scalable client-facing APIs.
-            </p>
-          </div>
-        </div>
+            <!-- Wellness AI -->
+            <div class="projects__project">
+                <h3>Backend Mastery, API Prowess, & Scripting Wizardry &#x2705;</h3>
+                <p class="description">
+                    Explore diverse projects featuring a CTF-inspired C++ application, 
+                    a dynamic Selenium automation streamlining Canvas course management, 
+                    an AWS-powered Image Classification API, and many more on my 
+                    <a href="https://github.com/shubham1chawla" target="_blank">GitHub</a> 
+                    profile.
+                </p>
+            </div>
 
-        <!-- Settlement Manager -->
-        <div class="project fade fade-out">
-          <div class="image image-color-mask settlement"></div>
-          <div class="body">
-            <h3>Settlement Manager</h3>
-            <h3>BlackRock</h3>
-            <br />
-            <p>
-              A prototype web application that <strong>visualized trades' settlement attributes</strong> necessary for
-              <strong>providing actionable cues</strong> to the management. This tool used visualization libraries, such as
-              <a href="https://www.highcharts.com/" target="_blank" rel="noopener noreferrer">Highcharts</a>, and a data-caching layer using
-              <a href="https://ignite.apache.org/" target="_blank" rel="noopener noreferrer">Apache Ignite</a>, to
-              <strong>provide real-time tracking</strong> of trades.
-            </p>
-          </div>
-        </div>
-
-        <!-- The Strategists -->
-        <div class="project fade fade-out">
-          <div class="image image-color-mask strategists"></div>
-          <div class="body">
-            <h3><a href="https://strategists.000webhostapp.com/" target="_blank" rel="noopener noreferrer">The Strategists 1.0</a></h3>
-            <h3>Thapar Institute</h3>
-            <br />
-            <p>
-              A <strong>monopoly-like online multiplayer game</strong> that allows users to invest in properties. Unlike monopoly, players can
-              <strong>buy a fraction of the land</strong>, inflating the land price accordingly. The last player standing with the
-              <strong>highest net worth wins</strong> the game. An admin player can <strong>introduce events on properties</strong> to
-              <strong>fluctuate their price</strong>, making the game dynamic and challenging.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3D Scanner -->
-        <div class="project fade fade-out">
-          <div class="image image-color-mask scanner"></div>
-          <div class="body">
-            <h3>
-              <a href="https://drive.google.com/file/d/11l6QfoHRy0kRkk5yJpFhDq8nBrxXaLSK/view?usp=share_link" target="_blank" rel="noopener noreferrer">
-                3D Scanner
-              </a>
-            </h3>
-            <h3>Thapar Institute</h3>
-            <br />
-            <p>
-              As a capstone project, I developed a <strong>low-cost</strong> optical 3D scanner from <strong>off-the-shelf</strong> components for
-              <strong>cost-sensitive markets</strong>. I used an <strong>infrared sensor</strong> to <strong>measure the distance</strong> of the object's
-              surface from the turn table and then used the cylindrical coordinates to <strong>plot the 3D mesh</strong> using Python's
-              <a href="https://matplotlib.org/" target="_blank" rel="noopener noreferrer">Matplotlib</a> library.
-            </p>
-          </div>
-        </div>
-      </div>
+        </main>
     </section>
 
     <!-- Contact -->
-    <section>
-      <h2 id="socials"><a href="#socials">Socials</a></h2>
-
-      <div class="contacts">
-        <!-- Social Icons -->
-        <div class="socials fade fade-out">
-          <!-- LinkedIn Icon -->
-          <div class="social">
-            <div class="image image-color-mask linkedin"></div>
-          </div>
-
-          <!-- Youtube Icon -->
-          <div class="social">
-            <div class="image image-color-mask youtube"></div>
-          </div>
-
-          <!-- Telegram Icon -->
-          <div class="social">
-            <div class="image image-color-mask telegram"></div>
-          </div>
-
-          <!-- GitHub Icon -->
-          <div class="social">
-            <div class="image image-color-mask github"></div>
-          </div>
-        </div>
-
-        <div class="divider">
-          <div class="divider-content">Contact me?</div>
-        </div>
-
-        <!-- Email Contact -->
-        <form class="fade fade-out">
-          <input name="subject" type="text" placeholder="What should be the email's subject?" />
-          <textarea name="body" rows="4" cols="50" placeholder="What's your message?"></textarea>
-          <input type="submit" value="&#9993; Send" />
-        </form>
-      </div>
+    <section class="contact">
+        <header>
+            <span>&#x1F4AC; Let's talk</span>
+        </header>
+        <main>
+            <p>
+                Let's Talk Code and Creativity! Reach out and spark a conversation. 
+                Whether it's about collaboration, projects, or the endless possibilities in the world of tech, my inbox is open. 
+                Drop me a line at <i>shuchawl (at) gmail (dot) com</i> and let's turn ideas into innovation!
+            </p>
+        </main>
+        <footer>
+            <p><i>Designed with &#x1FA77; by Shubham Chawla</i></p>
+        </footer>
     </section>
-  </body>
-</html>
 
+</body>
+
+</html>
