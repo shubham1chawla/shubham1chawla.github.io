@@ -42,20 +42,13 @@ a:focus {
     align-items: center;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 a[target="_blank"]::after {
     content: url(../assets/new-tab.svg);
     margin-left: 2px;
-}
-
-a[role="button"] {
-    border: 1px solid var(--accent-color);
-    border-radius: var(--small-unit);
-    padding: 0 var(--small-unit);
-    transition: all 400ms ease;
-}
-
-a[role="button"]:hover {
-    transform: translateX(var(--small-unit));
 }
 
 section {
@@ -68,6 +61,31 @@ section {
 
 section>header {
     font-size: var(--heading-font-size);
+}
+
+section .bubble {
+    position: relative;
+    background: var(--bubble-background-color);
+    border-radius: var(--small-unit);
+    font-size: var(--font-size);
+    max-width: min(100%, 50rem);
+    padding: var(--small-unit) var(--medium-unit);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    hyphens: auto;
+}
+
+section .bubble:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--large-unit);
+    width: 0;
+    height: 0;
+    border: var(--small-unit) solid transparent;
+    border-bottom-color: var(--bubble-background-color);
+    border-top: 0;
+    margin-left: calc(-1 * var(--small-unit));
+    margin-top: calc(-1 * var(--small-unit));
 }
 
 .animate {
@@ -145,11 +163,6 @@ section.about {
     gap: var(--large-unit);
 }
 
-section.about>footer {
-    display: flex;
-    gap: var(--medium-unit);
-}
-
 /* 
     ----------------------------------------------------
     PROJECTS SECTION CSS BELOW
@@ -224,12 +237,6 @@ section.projects>main div.slides>div.slide-4-3 {
     aspect-ratio: 4/3;
 }
 
-section.projects>main div.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--medium-unit);
-}
-
 /* 
     ----------------------------------------------------
     HOBBY SECTION CSS BELOW
@@ -241,30 +248,6 @@ section.hobby {
     flex-direction: column;
     justify-content: center;
     gap: var(--large-unit);
-}
-
-section.hobby .bubble {
-    position: relative;
-    background: var(--bubble-background-color);
-    border-radius: var(--small-unit);
-    font-size: var(--font-size);
-    max-width: min(100%, 45rem);
-    padding: var(--small-unit) var(--medium-unit);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
-}
-
-section.hobby .bubble:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: var(--large-unit);
-    width: 0;
-    height: 0;
-    border: var(--small-unit) solid transparent;
-    border-bottom-color: var(--bubble-background-color);
-    border-top: 0;
-    margin-left: calc(-1 * var(--small-unit));
-    margin-top: calc(-1 * var(--small-unit));
 }
 
 /* 
