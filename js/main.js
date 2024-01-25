@@ -1,7 +1,7 @@
 // Adding on click for scroll down button
 document.getElementById('scroll-down').addEventListener('click', () => {
-    const screenHeight = document.documentElement.clientHeight;
-    window.scrollTo({ top: screenHeight, behavior: 'smooth' });
+    const height = 0.8 * document.documentElement.clientHeight;
+    window.scrollTo({ top: height, behavior: 'smooth' });
 });
 
 // Setting up animation intersection observer
