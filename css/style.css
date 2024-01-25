@@ -12,7 +12,7 @@
     --font-size: min(6vw, 1.8rem);
 
     --section-width: 90%;
-    --section-max-width: 1200px;
+    --section-max-width: 1000px;
 
     --accent-color: #f39c12;
 
@@ -25,7 +25,7 @@
 }
 
 hr {
-    width: min(50rem, 60%);
+    width: min(50rem, 50%);
     margin: var(--large-unit) auto;
     border: 1px solid black;
 }
@@ -112,10 +112,6 @@ section.about {
     gap: var(--large-unit);
 }
 
-section.about>main {
-    max-width: calc(var(--section-max-width) - 400px);
-}
-
 section.about>footer {
     display: flex;
     gap: var(--medium-unit);
@@ -174,7 +170,7 @@ section.projects>main div.slides>div.slide {
     transform-origin: center center;
     transform: scale(1);
     transition: transform 0.5s;
-    width: min(60rem, 100%);
+    width: min(60rem, 90%);
     background-image: var(--background-url);
     background-size: cover;
     background-position: center;
@@ -188,14 +184,17 @@ section.projects>main div.slides>div.slide-4-3 {
     aspect-ratio: 4/3;
 }
 
-section.projects>main p.description {
-    max-width: calc(var(--section-max-width) - 400px);
-}
-
 section.projects>main div.buttons {
     display: flex;
     flex-wrap: wrap;
     gap: var(--medium-unit);
+}
+
+section.hobby {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--large-unit);
 }
 
 section.contact {
@@ -203,10 +202,6 @@ section.contact {
     flex-direction: column;
     justify-content: center;
     gap: var(--large-unit);
-}
-
-section.contact>main {
-    max-width: calc(var(--section-max-width) - 400px);
 }
 
 section.contact>main p>i {
