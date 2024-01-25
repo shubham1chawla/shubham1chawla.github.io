@@ -70,6 +70,23 @@ section>header {
     font-size: var(--heading-font-size);
 }
 
+.animate {
+    transition: all 1s ease;
+    transition-delay: 400ms;
+}
+
+.animate-out {
+    filter: blur(100%);
+    transform: translateX(var(--large-unit));
+    opacity: 0;
+}
+
+.animate-in {
+    filter: blur(0%);
+    transform: translateX(0%);
+    opacity: 1;
+}
+
 /* 
     ----------------------------------------------------
     LANDING SECTION CSS BELOW
@@ -192,10 +209,11 @@ section.projects>main div.slides>div.slide {
     transform-origin: center center;
     transform: scale(1);
     transition: transform 0.5s;
-    width: min(60rem, 90%);
+    width: min(60rem, 100%);
     background-image: var(--background-url);
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 
 section.projects>main div.slides>div.slide-16-9 {
@@ -226,28 +244,27 @@ section.hobby {
 }
 
 section.hobby .bubble {
-	position: relative;
-	background: var(--bubble-background-color);
-	border-radius: var(--small-unit);
+    position: relative;
+    background: var(--bubble-background-color);
+    border-radius: var(--small-unit);
     font-size: var(--font-size);
     max-width: min(100%, 45rem);
     padding: var(--small-unit) var(--medium-unit);
-    margin-top: var(--medium-unit);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
 }
 
 section.hobby .bubble:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: var(--large-unit);
-	width: 0;
-	height: 0;
-	border: var(--small-unit) solid transparent;
-	border-bottom-color: var(--bubble-background-color);
-	border-top: 0;
-	margin-left: calc(-1 * var(--small-unit));
-	margin-top: calc(-1 * var(--small-unit));
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--large-unit);
+    width: 0;
+    height: 0;
+    border: var(--small-unit) solid transparent;
+    border-bottom-color: var(--bubble-background-color);
+    border-top: 0;
+    margin-left: calc(-1 * var(--small-unit));
+    margin-top: calc(-1 * var(--small-unit));
 }
 
 /* 
