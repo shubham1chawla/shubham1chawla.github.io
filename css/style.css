@@ -126,6 +126,26 @@ section.landing>header {
     margin: auto 0;
 }
 
+section.landing>header span.landing__wave {
+    display: inline-block;
+    transform-origin: 90% 90%;
+    animation: wave-animation 1.5s infinite;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(-6.125deg);
+    }
+
+    50% {
+        transform: rotate(6.125deg);
+    }
+
+    100% {
+        transform: rotate(-6.125deg);
+    }
+}
+
 section.landing>footer {
     align-self: center;
 }
