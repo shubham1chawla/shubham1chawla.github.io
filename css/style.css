@@ -27,9 +27,12 @@
 }
 
 hr {
-    width: min(50rem, 50%);
+    width: min(50rem, 40%);
+    height: 4px;
+    background-color: black;
     margin: var(--large-unit) auto;
     border: 1px solid black;
+    border-radius: var(--small-unit);
 }
 
 a,
@@ -121,6 +124,26 @@ section.landing {
 section.landing>header {
     font-size: var(--landing-font-size);
     margin: auto 0;
+}
+
+section.landing>header span.landing__wave {
+    display: inline-block;
+    transform-origin: 90% 90%;
+    animation: wave-animation 1.5s infinite;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(-6.125deg);
+    }
+
+    50% {
+        transform: rotate(6.125deg);
+    }
+
+    100% {
+        transform: rotate(-6.125deg);
+    }
 }
 
 section.landing>footer {

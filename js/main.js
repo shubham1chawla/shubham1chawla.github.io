@@ -1,6 +1,6 @@
 // Adding on click for scroll down button
 document.getElementById('scroll-down').addEventListener('click', () => {
-    const height = 0.8 * document.documentElement.clientHeight;
+    const height = document.documentElement.clientHeight - 100;
     window.scrollTo({ top: height, behavior: 'smooth' });
 });
 
