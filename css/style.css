@@ -27,9 +27,12 @@
 }
 
 hr {
-    width: min(50rem, 50%);
+    width: min(50rem, 40%);
+    height: 4px;
+    background-color: black;
     margin: var(--large-unit) auto;
     border: 1px solid black;
+    border-radius: var(--small-unit);
 }
 
 a,
