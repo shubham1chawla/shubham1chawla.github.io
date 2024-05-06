@@ -250,6 +250,7 @@ section.projects>main div.slides>div.slide {
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    overflow: hidden;
 }
 
 section.projects>main div.slides>div.slide-16-9 {
