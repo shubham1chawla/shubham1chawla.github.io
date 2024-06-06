@@ -11,12 +11,16 @@
     --landing-font-size: min(12vw, 12rem);
     --heading-font-size: min(8vw, 8rem);
     --font-size: min(6vw, 1.8rem);
+    --small-font-size: min(5vw, 1.4rem);
 
-    --section-width: 90%;
+    --section-width: 100%;
+    --section-padding: 0 var(--medium-unit);
     --section-max-width: 1000px;
 
     --accent-color: #f39c12;
     --bubble-background-color: #f3f3f3;
+    --chat-user-background-color: #f8efba;
+    --chat-bot-background-color: #f3f3f3;
 
     --small-unit: 1rem;
     --medium-unit: 2rem;
@@ -33,6 +37,12 @@ hr {
     margin: var(--large-unit) auto;
     border: 1px solid black;
     border-radius: var(--small-unit);
+}
+
+h1,
+h2 {
+    font-weight: inherit;
+    font-size: inherit;
 }
 
 a,
@@ -59,11 +69,16 @@ section {
     width: var(--section-width);
     max-width: var(--section-max-width);
     margin: auto;
+    margin-bottom: var(--large-unit);
     font-size: var(--font-size);
+    box-sizing: border-box;
+    padding: var(--section-padding);
+    overflow-x: hidden;
 }
 
 section>header {
     font-size: var(--heading-font-size);
+    display: inline;
 }
 
 section .bubble {
@@ -119,6 +134,7 @@ section.landing {
     flex: auto 1;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: hidden;
 }
 
 section.landing>header {
@@ -160,16 +176,14 @@ section.landing>footer>button {
 }
 
 @keyframes scroll-down-icon-animation {
-    0% {
+
+    from,
+    to {
         transform: translateY(0%);
     }
 
     50% {
         transform: translateY(var(--medium-unit));
-    }
-
-    100% {
-        transform: translateY(0%);
     }
 }
 
@@ -188,6 +202,89 @@ section.about {
 
 /* 
     ----------------------------------------------------
+    INTERNSHIP SECTION CSS BELOW
+    ----------------------------------------------------
+*/
+
+section.internship {
+    display: flex;
+    flex-direction: column;
+    gap: var(--large-unit);
+}
+
+.chat-bubble {
+    position: relative;
+    max-width: min(100%, 50rem);
+    font-size: var(--font-size);
+    padding: var(--small-unit) var(--medium-unit);
+    margin-bottom: var(--large-unit);
+    border-radius: var(--small-unit);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+    hyphens: auto;
+}
+
+.chat-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: var(--small-unit);
+    width: 0;
+    height: 0;
+    border: var(--small-unit) solid transparent;
+    margin-top: calc(-1 * var(--small-unit));
+}
+
+.chat-bubble-user {
+    background: var(--chat-user-background-color);
+    margin-left: auto;
+}
+
+.chat-bubble-user:after {
+    right: 0;
+    border-left-color: var(--chat-user-background-color);
+    margin-right: calc(-2 * var(--small-unit));
+}
+
+.chat-bubble-bot {
+    background: var(--chat-bot-background-color);
+    margin-right: auto;
+}
+
+.chat-bubble-bot:after {
+    left: 0;
+    border-right-color: var(--chat-bot-background-color);
+    margin-left: calc(-2 * var(--small-unit));
+}
+
+.chat-bubble>div.chat-bubble__header {
+    font-family: monospace;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--small-unit);
+}
+
+.chat-bubble>p.chat-bubble__body {
+    display: inline;
+}
+
+div.chat-bubble>span.caret {
+    color: var(--accent-color);
+    font-weight: bolder;
+    animation: blink-caret .75s ease-in-out infinite;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* 
+    ----------------------------------------------------
     PROJECTS SECTION CSS BELOW
     ----------------------------------------------------
 */
@@ -198,16 +295,11 @@ section.projects {
     gap: var(--large-unit);
 }
 
-section.projects>main {
-    display: flex;
-    flex-direction: column;
-    gap: var(--large-unit);
-}
-
 section.projects>main div.projects__project {
     display: flex;
     flex-direction: column;
     gap: var(--medium-unit);
+    padding: var(--large-unit) 0;
 }
 
 section.projects>main div.slides {
