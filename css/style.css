@@ -40,8 +40,7 @@ hr {
 }
 
 h1,
-h2,
-h3 {
+h2 {
     font-weight: inherit;
     font-size: inherit;
 }
@@ -300,7 +299,7 @@ section.projects>main div.projects__project {
     display: flex;
     flex-direction: column;
     gap: var(--medium-unit);
-    margin-bottom: var(--large-unit);
+    padding: var(--large-unit) 0;
 }
 
 section.projects>main div.slides {
