@@ -50,9 +50,13 @@ a:visited,
 a:focus {
     color: var(--accent-color);
     text-decoration: none;
-    display: inline-flex;
+    display: inline;
     flex-wrap: wrap;
     align-items: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 a:hover {
@@ -61,7 +65,9 @@ a:hover {
 
 a[target="_blank"]::after {
     content: url(../assets/new-tab.svg);
-    margin-left: 2px;
+    margin-left: 1px;
+    transform: translateY(1.5px);
+    display: inline-block;
 }
 
 section {
@@ -202,11 +208,11 @@ section.about {
 
 /* 
     ----------------------------------------------------
-    INTERNSHIP SECTION CSS BELOW
+    LATEST SECTION CSS BELOW
     ----------------------------------------------------
 */
 
-section.internship {
+section.latest {
     display: flex;
     flex-direction: column;
     gap: var(--large-unit);

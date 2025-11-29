@@ -109,7 +109,7 @@ const chatObserver = new IntersectionObserver((entries) => {
 });
 
 // Setting minimum height for the chat's main element
-const chatElement = document.querySelector('section.internship>main');
+const chatElement = document.querySelector('section.latest>main');
 const styles = getComputedStyle(chatElement);
 const height = styles.height;
 const margin = styles.getPropertyValue('--large-unit');
